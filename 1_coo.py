@@ -2,14 +2,15 @@ import json
 import time
 from config import M, MNZ, X
 
+tx = time.time()
 with open("sample.coo") as coo:
     rows = json.loads(coo.readline().strip())
     cols = json.loads(coo.readline().strip())
     data = json.loads(coo.readline().strip())
 
+print("加载耗时：", time.time()-tx)
 
 print("开始计算:\n")
-
 
 #---------------------------Sequential Execution---------------------------
 t0 = time.time()

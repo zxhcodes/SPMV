@@ -3,10 +3,13 @@ import time
 
 from config import X
 
+tx = time.time()
 with open("sample.csr") as csr:
     ptrs = json.loads(csr.readline().strip())
     indices = json.loads(csr.readline().strip())
     data = json.loads(csr.readline().strip())
+
+print("加载耗时：", time.time()-tx)
 
 nums = len(ptrs)
 

@@ -2,9 +2,13 @@ import json
 import time
 from config import X, N, M
 
+tx = time.time()
 with open("sample.dia") as dia:
     offsets = json.loads(dia.readline().strip())
     data = json.loads(dia.readline().strip())
+
+print("加载耗时：", time.time()-tx)
+
 
 num_diags = len(offsets)
 
